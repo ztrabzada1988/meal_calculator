@@ -120,6 +120,8 @@ Bill.prototype.breakdown = function () {
     console.log("Total Bill: $" + foodBill.totalBill());
     console.log("Total Tip: $" + foodBill.totalTip());
     console.log(zubair.name + "'s food bill (including tax) comes to $" + (foodBill.totalBill() + foodBill.calculateTax()) + "plus tip of $" + foodBill.totalTip());
+    console.log(bob.name + "'s food bill (including tax) comes to $" + (foodBill.totalBill() + foodBill.calculateTax()) + "plus tip of $" + foodBill.totalTip());
+    console.log(jason.name + "'s food bill (including tax) comes to $" + (foodBill.totalBill() + foodBill.calculateTax()) + "plus tip of $" + foodBill.totalTip());
 }
 
 

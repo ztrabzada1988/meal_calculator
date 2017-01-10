@@ -53,7 +53,6 @@ Diner.prototype.calculateTip = function (tipRate) {
 }
 
 
-
 // OBJECT FOR BILL //
 
 // Bill object with list of diners
@@ -77,7 +76,7 @@ Bill.prototype.totalBill = function () {
 }
 
 // method to total and print diners tips
-Bill.prototype.printTips = function (totalTips) {
+Bill.prototype.totalTip = function (totalTips) {
     var totalTips = 0;
     for (var i = 0; i <= this.dinersList.length; i++) {
         totalTips += this.dinersList[i].calculateTip(tipRate);
@@ -118,5 +117,10 @@ foodBill.addDiner(jason);
 
 // Print a breakdown for each person
 Bill.prototype.breakdown = function () {
-
+    console.log("Total Bill: $" + foodBill.totalBill());
+    console.log("Total Tip: $" + foodBill.totalTip());
+    console.log(zubair.name + "'s food bill (including tax) comes to $" + (foodBill.totalBill() + foodBill.calculateTax()) + "plus tip of $" + foodBill.totalTip());
 }
+
+
+foodBill.breakdown();

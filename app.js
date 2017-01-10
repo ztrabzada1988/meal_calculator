@@ -69,7 +69,7 @@ Bill.prototype.addDiner = function (diner) {
 // method to total and print the total of all diners, including tax
 Bill.prototype.totalBill = function () {
     var totalDinerBill = 0;
-    for (let i = 0; i <= this.dinersList.length; i++) {
+    for (var i = 0; i <= this.dinersList.length; i++) {
         totalDinerBill += (this.dinersList[i].total() + this.dinersList[i].calculateTax(taxRate) + this.dinersList[i].calculateTip(tipRate));
     }
     // return total bill with 2 decimal places
@@ -79,7 +79,7 @@ Bill.prototype.totalBill = function () {
 // method to total and print diners tips
 Bill.prototype.printTips = function (totalTips) {
     var totalTips = 0;
-    for (let i = 0; i <= this.dinersList.length; i++) {
+    for (var i = 0; i <= this.dinersList.length; i++) {
         totalTips += this.dinersList[i].calculateTip(tipRate);
     }
     return totalTips.toFixed(2);
@@ -88,10 +88,35 @@ Bill.prototype.printTips = function (totalTips) {
 
 // Step 2: Use functions
 
+// add diner 1
+var zubair = new Diner("Zubair");
+var dish = new Dish("Chicken Frontega", 16.99);
+zubair.addDish(dish);
+var dish = new Dish("Tomato Soup", 8.99);
+zubair.addDish(dish);
+
+// add diner 2
+var bob = new Diner("Bob");
+var dish = new Dish("Fish Fries", 12.99);
+bob.addDish(dish);
+var dish = new Dish("Meat Loaf", 10.99);
+bob.addDish(dish);
+
+// add diner 3
+var jason = new Diner("Jason");
+var dish = new Dish("Steak", 19.99);
+jason.addDish(dish);
+var dish = new Dish("Chicken Salad", 6.99);
+jason.addDish(dish);
 
 
+// add diners to the Bill
+var foodBill = new Bill();
+foodBill.addDiner(zubair);
+foodBill.addDiner(bob);
+foodBill.addDiner(jason);
 
 // Print a breakdown for each person
-function breakdownPerPerson() {
+Bill.prototype.breakdown = function () {
 
 }

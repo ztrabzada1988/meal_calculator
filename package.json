@@ -1,0 +1,19 @@
+{
+  "name": "meal_calculator",
+  "version": "1.0.0",
+  "description": "meal calculator app",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ztrabzada1988/meal_calculator.git"
+  },
+  "author": "Zubair Trabzada",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ztrabzada1988/meal_calculator/issues"
+  },
+  "homepage": "https://github.com/ztrabzada1988/meal_calculator#readme"
+}

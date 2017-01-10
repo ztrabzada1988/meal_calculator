@@ -23,7 +23,7 @@ Diner.prototype.addDish = function (dish) {
 // method to add total dishlist prices
 Diner.prototype.total = function () {
     var total = 0;
-    for (var i = 0; i <= this.dishList.length; i++) {
+    for (var i = 0; i < this.dishList.length; i++) {
         total += this.dishList[i].price;
     }
     return total;
@@ -35,7 +35,7 @@ var taxRate = 0.0875;
 Diner.prototype.calculateTax = function (taxRate) {
     var totalTax = 0;
 
-    for (var i = 0; i <= this.dishList.length; i++) {
+    for (var i = 0; i < this.dishList.length; i++) {
         totalTax += this.dishList[i].price * taxRate;
     }
     return totalTax;
@@ -46,7 +46,7 @@ var tipRate = 0.20;
 
 Diner.prototype.calculateTip = function (tipRate) {
     var totalTip = 0;
-    for (var i = 0; i <= this.dishList.length; i++) {
+    for (var i = 0; i < this.dishList.length; i++) {
         totalTip += this.dishList[i].price * tipRate;
     }
     return totalTip;
@@ -68,7 +68,7 @@ Bill.prototype.addDiner = function (diner) {
 // method to total and print the total of all diners, including tax
 Bill.prototype.totalBill = function () {
     var totalDinerBill = 0;
-    for (var i = 0; i <= this.dinersList.length; i++) {
+    for (var i = 0; i < this.dinersList.length; i++) {
         totalDinerBill += (this.dinersList[i].total() + this.dinersList[i].calculateTax(taxRate) + this.dinersList[i].calculateTip(tipRate));
     }
     // return total bill with 2 decimal places
@@ -78,7 +78,7 @@ Bill.prototype.totalBill = function () {
 // method to total and print diners tips
 Bill.prototype.totalTip = function (totalTips) {
     var totalTips = 0;
-    for (var i = 0; i <= this.dinersList.length; i++) {
+    for (var i = 0; i < this.dinersList.length; i++) {
         totalTips += this.dinersList[i].calculateTip(tipRate);
     }
     return totalTips.toFixed(2);
@@ -119,9 +119,9 @@ foodBill.addDiner(jason);
 Bill.prototype.breakdown = function () {
     console.log("Total Bill: $" + foodBill.totalBill());
     console.log("Total Tip: $" + foodBill.totalTip());
-    console.log(zubair.name + "'s food bill (including tax) comes to $" + (foodBill.totalBill() + foodBill.calculateTax()) + "plus tip of $" + foodBill.totalTip());
-    console.log(bob.name + "'s food bill (including tax) comes to $" + (foodBill.totalBill() + foodBill.calculateTax()) + "plus tip of $" + foodBill.totalTip());
-    console.log(jason.name + "'s food bill (including tax) comes to $" + (foodBill.totalBill() + foodBill.calculateTax()) + "plus tip of $" + foodBill.totalTip());
+    console.log(zubair.name + "'s food bill (including tax) comes to $" + (zubair.totalBill() + zubair.calculateTax()) + "plus tip of $" + zubair.totalTip());
+    //console.log(bob.name + "'s food bill (including tax) comes to $" + (foodBill.totalBill() + foodBill.calculateTax()) + "plus tip of $" + foodBill.totalTip());
+    //console.log(jason.name + "'s food bill (including tax) comes to $" + (foodBill.totalBill() + foodBill.calculateTax()) + "plus tip of $" + foodBill.totalTip());
 }
 
 
